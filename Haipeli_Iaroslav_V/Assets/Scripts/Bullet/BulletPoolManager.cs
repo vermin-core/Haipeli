@@ -11,5 +11,27 @@ public class BulletPoolManager : MonoBehaviour
     
     void Awake(){
     Instance = this;
+    IntializePool();
+    }
+
+    private void IntializePool()
+    {
+        for(int i = 0; i < poolSize; i++){
+            GameObject newBullet = Instantiate(bulletPrefab);
+            newBullet.SetActive(false);
+            bulletPool.Enqueue(newBullet);
+        }
+    }
+
+    public GameObject GetBullet(){
+        GameObject bullet = bulletPool.Dequeue();
+        bullet.SetActive(true);
+        return bullet;
+    }
+
+    public void ReturnBullet(GameObject bullet){
+        bullet.SetActive(false);
+        bulletPool.Enqueue(bullet);
     }
 }
+
