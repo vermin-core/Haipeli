@@ -399,4 +399,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6770f99245e23b4bbb4beb6c41bdc62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunTransform: {fileID: 1303879451}
   moveSpeed: 5
