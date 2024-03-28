@@ -27,15 +27,15 @@ public class BulletPoolManager : MonoBehaviour
         if(bulletPool.Count > 0)
         {
 
-        GameObject bullet = bulletPool.Dequeue();
-        bullet.SetActive(true);
-        return bullet;
+            GameObject bullet = bulletPool.Dequeue();
+            bullet.SetActive(true);
+            return bullet;
 
         }
         else{
-           GameObject newBullet = Instantiate(bulletPrefab);
-           newBullet.SetActive(true);
-           return newBullet; 
+            GameObject newBullet = Instantiate(bulletPrefab);
+            newBullet.SetActive(true);
+            return newBullet; 
         }
     }
 
